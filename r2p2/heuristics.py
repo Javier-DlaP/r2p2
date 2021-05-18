@@ -57,6 +57,6 @@ def octile(point, point2):
     """
         Function that performs octile heuristic.
     """
-    return max(abs(point2.grid_point[0] - point.grid_point[0]), abs(point2.grid_point[1] - point.grid_point[1])) + math.sqrt(2) * min(abs(point2.grid_point[0] - point.grid_point[0]), abs(point2.grid_point[1] - point.grid_point[1]))
+    return abs((point2.grid_point[0] - point.grid_point[0]) - (point2.grid_point[1] - point.grid_point[1])) + math.sqrt(2) * min(abs(point2.grid_point[0] - point.grid_point[0]), abs(point2.grid_point[1] - point.grid_point[1]))
 
 pp.register_heuristic('octile', octile)
