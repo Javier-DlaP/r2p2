@@ -1,78 +1,68 @@
-These are just test lines.
+#
+# Copyright (C) 2006, Board of Trustees of the University of Illinois.
+#
+# The program is copyrighted by the University of Illinois, and should
+# not be distributed without prior approval.  Commercialization of this
+# product requires prior licensing from the University of Illinois.
+# Commercialization includes the integration of this code in part or
+# whole into a product for resale.
+#
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Author: C. W. Hsu, B. W. Wah, R. Y. Huang, Y. X. Chen
+#-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-They should not break the program
-At all
 
-% But better safe than sorry
-
-% 0.000: ( crash )
-
-% Let's see what happens
+Parsing domain file
+ domain 'ROVER' defined
+Parsing problem file
+ problem 'ROVER_PROBLEM' defined
 
 
 
-(move r p0515 p3030)
 
-10: (recharge_batteries )
 
-11: (recharge_batteries )
+Starting SGPlan search ...
+Warning: cannot find corresponding state group for fact (ANALYZED P12)
+Warning: cannot find corresponding state group for fact (ANALYZED P11)
+Warning: cannot find corresponding state group for fact (ANALYZED P10)
+Warning: cannot find corresponding state group for fact (COMMUNICATED R2 P11)
+Warning: cannot find corresponding state group for fact (COMMUNICATED R1 P21)
+Warning: cannot find corresponding state group for fact (DRILLED P00)
+Warning: cannot find corresponding state group for fact (DRILLED P11)
+Warning: cannot find corresponding state group for fact (PHOTO P22)
+Warning: cannot find corresponding state group for fact (PHOTO P20)
 
-12: (recharge_batteries )
+Solution found.
 
-11: (move r p3030 p2025)
+; Time 0.00
+; ParsingTime 0.00
+; NrActions
+; MakeSpan
+; MetricValue 22.923
+; PlanningTechnique Modified-FF(enforced hill-climbing search) as the subplanner
 
-13: (take_picture )
 
-14: (recharge_batteries )
 
-15: (recharge_batteries )
-
-17: (move r p2025 p1010)
-
-16: (take_picture )
-
-10: (recharge_batteries )
-
-11: (recharge_batteries )
-
-12: (recharge_batteries )
-
-13: (recharge_batteries )
-
-14: (recharge_batteries )
-
-15: (recharge_batteries )
-
-10: (recharge_batteries )
-
-11: (recharge_batteries )
-
-12: (recharge_batteries )
-
-13: (recharge_batteries )
-
-14: (recharge_batteries )
-
-15: (recharge_batteries )
-
-10: (recharge_batteries )
-
-11: (recharge_batteries )
-
-12: (recharge_batteries )
-
-13: (recharge_batteries )
-
-14: (recharge_batteries )
-
-15: (recharge_batteries )
-
-21: (move r p2020 p2530)
-
-22: (get_co2_reading )
-
-21: (move r p2530 p3010)
-
-23: (drill)
-
-22: (take_picture )
+0.001: (move R1 P00 P01 FAST) [1.0000]
+0.002: (RECHARGE_BATTERY R2) [12.0000]
+1.003: (move R1 P01 P11 FAST) [1.0000]
+2.004: (ANALYZE R1 P11) [1.0000]
+3.005: (move R1 P11 P10 FAST) [1.0000]
+4.006: (ANALYZE R1 P10) [1.0000]
+5.007: (move R1 P10 P12 FAST) [1.0000]
+6.008: (ANALYZE R1 P12) [1.0000]
+7.009: (move R1 P12 P22 FAST) [1.0000]
+8.010: (RECHARGE_BATTERY R1) [10.4000]
+12.011: (move R2 P22 P12 FAST) [1.0000]
+13.012: (move R2 P12 P11 FAST) [1.0000]
+14.013: (COMMUNICATE R2 P11) [0.5000]
+14.514: (DRILL R2 P11) [2.0000]
+16.515: (move R2 P11 P01 FAST) [1.0000]
+17.516: (move R2 P01 P00 FAST) [1.0000]
+18.417: (move R1 P22 P21 FAST) [1.0000]
+18.518: (DRILL R2 P00) [2.0000]
+19.419: (COMMUNICATE R1 P21) [0.5000]
+19.920: (move R1 P21 P20 FAST) [1.0000]
+20.921: (TAKE_PICTURE R1 P20) [0.5000]
+21.422: (move R1 P20 P22 FAST) [1.0000]
+22.423: (TAKE_PICTURE R1 P22) [0.5000]
