@@ -63,4 +63,4 @@ Pero esto no sería todo para que fuera utilizable en un robot real, serían nec
 - Implementación de técnicas de obtención de rejillas de forma automática
 - Cálculo del tiempo de ejecución al ser una aplicación en tiempo real (y ajustarse a la potencia de computo que se tiene)
 
-Como se ve, no se ha hecho más que rozar lo que sería un sistema de control para robots, además hay que decidir una arquitectura como se explica en el tema de [Autonomoud Control architures](https://github.com/Malola2015/planningCourse/blob/master/robotics/controlarchitectures.pdf) por lo que habría mucho trabajo por delante si se quisiera llevar a escenarios reales.
+Como se ve, no se ha hecho más que rozar lo que sería un sistema de control para robots, además hay que decidir una arquitectura como se explica en el tema de [Autonomous Control architures](https://github.com/Malola2015/planningCourse/blob/master/robotics/controlarchitectures.pdf) por lo que habría mucho trabajo por delante si se quisiera llevar a escenarios reales.
