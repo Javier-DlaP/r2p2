@@ -35,7 +35,7 @@ Se implementa en el fichero `r2p2/thetaStar.py` el algoritmo Theta* a partir del
 
 Tras esto se crea un scenario semejante al de la diapositiva 38 de [los apuntes](https://github.com/Malola2015/planningCourse/blob/master/robotics/pathplanning.pdf).
 
-[Comparativa entre los diferentes algoritmos y heurísticas](https://github.com/Javier-DlaP/r2p2/comparative.md)
+[Comparativa entre los diferentes algoritmos y heurísticas](https://github.com/Javier-DlaP/r2p2/blob/master/comparative.md)
 
 ## Integración con PDDL
 
