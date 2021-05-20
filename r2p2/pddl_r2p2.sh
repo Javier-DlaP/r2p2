@@ -1,0 +1,1 @@
+../sgplan51 -o ../Planetary_exploration_on_Mars/rover.pddl -f ../Planetary_exploration_on_Mars/rover_problem.pddl | tr A-Z a-z > ../res/planning.txt;python r2p2.py --scenario ../conf/scenario-planning.json
