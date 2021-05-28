@@ -1,4 +1,5 @@
 import path_planning as pp
+from math import inf
 
 def children(point,grid):
     """
@@ -77,7 +78,7 @@ def lineofsigth(current, node, grid):
                 f = f - dx
             if f != 0 and grid[x0 + ((sx - 1) // 2)][y0 + ((sy - 1) // 2)].value >= 5:
                 return False
-            if dy != 0 and grid[x0 + ((sx - 1) // 2)][y0].value >= 5 and grid[x0 + ((sx - 1) // 2)][y0 - 1].value >= 5:
+            if dy == 0 and grid[x0 + ((sx - 1) // 2)][y0].value >= 5 and grid[x0 + ((sx - 1) // 2)][y0 - 1].value >= 5:
                 return False
             x0 = x0 + sx
     else:
@@ -138,29 +139,27 @@ def thetaStar(start, goal, grid, heur='naive'):
             #If it is already in the closed set, skip it
             if node in closedset:
                 continue
-            #Otherwise if it is already in the open set
-            if node in openset:
-                if current.parent != None and lineofsigth(current.parent, node, grid):
-                    # Path 2
-                    new_g = current.parent.G + current.parent.move_cost(node)
-                    if new_g < node.G:
-                        node.G = new_g
-                        node.parent = current.parent
-                else:
-                    #Check if we beat the G score
-                    new_g = current.G + current.move_cost(node)
-                    if node.G > new_g:
-                        #If so, update the node to have a new parent
-                        node.G = new_g
-                        node.parent = current
+            if node not in openset:
+                node.G = inf
+                node.parent = None
+            if current.parent != None and lineofsigth(current.parent, node, grid):
+                new_g = current.parent.G + current.parent.move_cost(node)
+                if new_g < node.G:
+                    node.G = new_g
+                    node.parent = current.parent
+                    if node in openset:
+                        openset.remove(node)
+                    openset.add(node)
             else:
-                #If it isn't in the open set, calculate the G and H score for the node
-                node.G = current.G + current.move_cost(node)
-                node.H = pp.heuristic[heur](node, goal)
-                #Set the parent to our current item
-                node.parent = current
-                #Add it to the set
-                openset.add(node)
+                #Check if we beat the G score
+                new_g = current.G + current.move_cost(node)
+                if node.G > new_g:
+                    #If so, update the node to have a new parent
+                    node.G = new_g
+                    node.parent = current
+                    if node in openset:
+                        openset.remove(node)
+                    openset.add(node)
     #Throw an exception if there is no path
     raise ValueError('No Path Found')
 
