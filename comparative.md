@@ -20,24 +20,9 @@
   <img src="images_gifs/Astar_octile.png" width="40%">
 </p>
 
-#### Dijkstra y naive
+#### Dijkstra
 <p align="left">
   <img src="images_gifs/Dijkstra_naive.png" width="40%">
-</p>
-
-#### Dijkstra y euclídea
-<p align="left">
-  <img src="images_gifs/Dijkstra_euclidean.png" width="40%">
-</p>
-
-#### Dijkstra y manhattan
-<p align="left">
-  <img src="images_gifs/Dijkstra_manhattan.png" width="40%">
-</p>
-
-#### Dijkstra y octile
-<p align="left">
-  <img src="images_gifs/Dijkstra_octile.png" width="40%">
 </p>
 
 #### Theta* y naive
